@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnService"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:text="@string/services"
+        app:layout_constraintBottom_toTopOf="@+id/btnForeground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnForeground"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/foreground_service"
+        app:layout_constraintBottom_toTopOf="@+id/btnIntent"
+        app:layout_constraintEnd_toEndOf="@+id/btnService"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btnService"
+        app:layout_constraintTop_toBottomOf="@+id/btnService" />
+
+    <Button
+        android:id="@+id/btnIntent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/intent_service"
+        app:layout_constraintBottom_toTopOf="@+id/btnJobDispatcher"
+        app:layout_constraintEnd_toEndOf="@+id/btnForeground"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btnForeground"
+        app:layout_constraintTop_toBottomOf="@+id/btnForeground" />
+
+    <Button
+        android:id="@+id/btnJobDispatcher"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/job_dispatcher"
+        app:layout_constraintBottom_toTopOf="@+id/btnJobIntent"
+        app:layout_constraintEnd_toEndOf="@+id/btnIntent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btnIntent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIntent" />
+
+    <Button
+        android:id="@+id/btnJobIntent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/job_intent_service"
+        app:layout_constraintBottom_toTopOf="@+id/btnAlarmManager"
+        app:layout_constraintEnd_toEndOf="@+id/btnJobDispatcher"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btnJobDispatcher"
+        app:layout_constraintTop_toBottomOf="@+id/btnJobDispatcher" />
+
+    <Button
+        android:id="@+id/btnAlarmManager"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/alarm_manager"
+        app:layout_constraintBottom_toTopOf="@+id/btnWorkManager"
+        app:layout_constraintEnd_toEndOf="@+id/btnJobIntent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btnJobIntent"
+        app:layout_constraintTop_toBottomOf="@+id/btnJobIntent" />
+
+    <Button
+        android:id="@+id/btnWorkManager"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/work_manager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnAlarmManager"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btnAlarmManager"
+        app:layout_constraintTop_toBottomOf="@+id/btnAlarmManager" />
+</androidx.constraintlayout.widget.ConstraintLayout>
