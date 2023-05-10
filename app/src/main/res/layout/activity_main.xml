@@ -35,18 +35,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/intent_service"
-        app:layout_constraintBottom_toTopOf="@+id/btnJobDispatcher"
+        app:layout_constraintBottom_toTopOf="@+id/btnJobScheduler"
         app:layout_constraintEnd_toEndOf="@+id/btnForeground"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/btnForeground"
         app:layout_constraintTop_toBottomOf="@+id/btnForeground" />
 
     <Button
-        android:id="@+id/btnJobDispatcher"
+        android:id="@+id/btnJobScheduler"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/job_dispatcher"
+        android:text="@string/job_scheduler"
         app:layout_constraintBottom_toTopOf="@+id/btnJobIntent"
         app:layout_constraintEnd_toEndOf="@+id/btnIntent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -60,10 +60,10 @@
         android:layout_marginTop="16dp"
         android:text="@string/job_intent_service"
         app:layout_constraintBottom_toTopOf="@+id/btnAlarmManager"
-        app:layout_constraintEnd_toEndOf="@+id/btnJobDispatcher"
+        app:layout_constraintEnd_toEndOf="@+id/btnJobScheduler"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/btnJobDispatcher"
-        app:layout_constraintTop_toBottomOf="@+id/btnJobDispatcher" />
+        app:layout_constraintStart_toStartOf="@+id/btnJobScheduler"
+        app:layout_constraintTop_toBottomOf="@+id/btnJobScheduler" />
 
     <Button
         android:id="@+id/btnAlarmManager"

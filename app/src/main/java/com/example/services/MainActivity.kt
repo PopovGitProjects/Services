@@ -1,11 +1,13 @@
 package com.example.services
 
-import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.job.JobInfo
+import android.app.job.JobScheduler
+import android.content.ComponentName
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import com.example.services.databinding.ActivityMainBinding
@@ -30,9 +32,31 @@ class MainActivity : AppCompatActivity() {
             btnForeground.setOnClickListener {
                 ContextCompat.startForegroundService(
                     this@MainActivity,
-                    MyForegroundService.newIntent(this@MainActivity
+                    MyForegroundService.newIntent(
+                        this@MainActivity
                     )
                 )
+            }
+            btnIntent.setOnClickListener {
+                ContextCompat.startForegroundService(
+                    this@MainActivity,
+                    MyIntentService.newIntent(
+                        this@MainActivity
+                    )
+                )
+            }
+            btnJobScheduler.setOnClickListener {
+                val componentName = ComponentName(this@MainActivity, MyJobService::class.java)
+
+                val jobInfo =
+                    JobInfo.Builder(MyJobService.JOB_ID, componentName)
+                        .setPersisted(true)
+                        .setRequiresCharging(true)
+                        .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
+                        .build()
+
+                val jobScheduler = getSystemService(JOB_SCHEDULER_SERVICE) as JobScheduler
+                jobScheduler.schedule(jobInfo)
             }
         }
     }
