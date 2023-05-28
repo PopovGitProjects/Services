@@ -11,6 +11,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
+import androidx.work.ExistingWorkPolicy
+import androidx.work.WorkManager
 import com.example.services.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -66,6 +68,14 @@ class MainActivity : AppCompatActivity() {
             }
             btnJobIntent.setOnClickListener {
                 MyJobIntentService.enqueue(this@MainActivity, page++)
+            }
+            btnWorkManager.setOnClickListener {
+                val workManager = WorkManager.getInstance(applicationContext)
+                workManager.enqueueUniqueWork(
+                    MyWorker.WORK_NAME,
+                    ExistingWorkPolicy.APPEND_OR_REPLACE,
+                    MyWorker.makeRequest(page++)
+                )
             }
         }
     }
